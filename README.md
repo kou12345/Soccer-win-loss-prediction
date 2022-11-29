@@ -8,6 +8,11 @@
 .\venv\Scripts\activate
 `
 
+ライブラリのインストール<br>
+`
+pip install -r requirements.txt
+`
+
 実行<br>
 `
 python main.py
