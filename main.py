@@ -33,14 +33,4 @@ print(team_rank_info_col.text)
 # 順位 勝点 試合数 勝数 引分数 敗数 得点 失点 得失点差
 # 14 16 15 4 4 7 18 32 -14
 
-# team_rank_info = driver.find_element(By.CLASS_NAME, "sc-tableTeamRank__row")
-# print(team_rank_info.text)  # 14 16 15 4 4 7 18 32 -14
-
-
-# points = driver.find_elements(By.CLASS_NAME, "sc-tableGame__scoreDetail")
-# for point in points:
-#     print(point.text)
-
-# スコアを取得 例 1 - 2
-# point = driver.find_element(By.CLASS_NAME, "sc-tableGame__scoreDetail")
-# print(point.text)
+# TODO 取得した「順位」データをcsvファイルに保存
