@@ -3,6 +3,11 @@
 ## サッカーの勝敗予測
 
 ### 実行方法
+仮想環境作成<br>
+`
+python -m venv venv
+`
+
 仮想環境を有効化 <br>
 `
 .\venv\Scripts\activate
