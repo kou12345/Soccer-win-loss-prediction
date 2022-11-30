@@ -20,8 +20,21 @@ for team in teams:
 
 print(f"teams_list: {teams_list}")
 
-# TODO 「チーム情報」をクリック
-# TODO 「sc-tableTeamRank__data」のデータを取得
+
+team_item = driver.find_element(By.CLASS_NAME, "sc-team__item")
+# print(team_item.find_element(By.CLASS_NAME, "sc-team__menuItem").text)  # value: チーム情報
+team_info_url = team_item.find_element(By.TAG_NAME, "a").get_attribute("href")  # チーム情報のURL取得
+# 「チーム情報」へ遷移
+driver.get(team_info_url)
+
+# 「順位」のデータを取得
+team_rank_info_col = driver.find_element(By.CLASS_NAME, "sc-tableTeamRank")
+print(team_rank_info_col.text)
+# 順位 勝点 試合数 勝数 引分数 敗数 得点 失点 得失点差
+# 14 16 15 4 4 7 18 32 -14
+
+# team_rank_info = driver.find_element(By.CLASS_NAME, "sc-tableTeamRank__row")
+# print(team_rank_info.text)  # 14 16 15 4 4 7 18 32 -14
 
 
 # points = driver.find_elements(By.CLASS_NAME, "sc-tableGame__scoreDetail")
@@ -31,4 +44,3 @@ print(f"teams_list: {teams_list}")
 # スコアを取得 例 1 - 2
 # point = driver.find_element(By.CLASS_NAME, "sc-tableGame__scoreDetail")
 # print(point.text)
-
