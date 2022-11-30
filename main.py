@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 # webdriverオブジェクトを作る (ブラウザが開く)
 driver_path = "./chromedriver.exe"
@@ -32,5 +33,9 @@ print(team_rank_info_col.text)
 # 順位 勝点 試合数 勝数 引分数 敗数 得点 失点 得失点差
 # 14 16 15 4 4 7 18 32 -14
 
+# TODO pandasでDataFrameに変換
 # TODO 取得した「順位」データをcsvファイルに保存
 # TODO 全チームの順位データを取得
+
+
+
