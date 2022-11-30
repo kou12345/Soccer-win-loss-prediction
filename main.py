@@ -20,7 +20,6 @@ for team in teams:
 
 print(f"teams_list: {teams_list}")
 
-
 team_item = driver.find_element(By.CLASS_NAME, "sc-team__item")
 # print(team_item.find_element(By.CLASS_NAME, "sc-team__menuItem").text)  # value: チーム情報
 team_info_url = team_item.find_element(By.TAG_NAME, "a").get_attribute("href")  # チーム情報のURL取得
@@ -34,3 +33,4 @@ print(team_rank_info_col.text)
 # 14 16 15 4 4 7 18 32 -14
 
 # TODO 取得した「順位」データをcsvファイルに保存
+# TODO 全チームの順位データを取得
