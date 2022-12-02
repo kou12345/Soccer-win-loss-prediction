@@ -15,11 +15,13 @@ teams = driver.find_elements(By.CLASS_NAME, "sc-team__title")
 
 teams_list = []  # チーム名のリスト
 
+# チーム名取得
 for team in teams:
     if team.text != "":
         teams_list.append(team.text)
 
 print(f"teams_list: {teams_list}")
+
 
 
 all_team_items = driver.find_elements(By.CLASS_NAME, "sc-team__item")
@@ -49,6 +51,27 @@ print(tmp_list)
 
 
 # TODO pandasでDataFrameに変換
+df = pd.DataFrame(tmp_list)
+print(df)
+print(type(df))
+
+# 順位データのcolumnを取得
+driver.get("https://soccer.yahoo.co.jp/ws/category/eng/teams/4211/info?gk=52")
+team_rank_info = driver.find_elements(By.CLASS_NAME, "sc-tableTeamRank__head")
+
+team_rank_info_col = []
+
+for i in team_rank_info:
+    team_rank_info_col.append(i.text)
+
+# print(team_rank_info_col)
+
+df.columns = team_rank_info_col
+df.index = teams_list
+print(df)
+
+df.to_csv("./data.csv")
+
 # TODO 取得した「順位」データをcsvファイルに保存
 
 
